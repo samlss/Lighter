@@ -1,8 +1,6 @@
 # Lighter
 [![Download](https://api.bintray.com/packages/samlss/maven/lighter/images/download.svg)](https://bintray.com/samlss/maven/lighter/_latestVersion)   [![Api reqeust](https://img.shields.io/badge/API-14+-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14#l14)    [![Apache License 2.0](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/samlss/Lighter/blob/master/LICENSE)  [![Blog](https://img.shields.io/badge/samlss-blog-orange.svg)](https://blog.csdn.net/Samlss)
 
-A highlight & guide library for android
-
 ### Support use in:
 - Android native layout(Such as RelativeLayout, FragmentLayout)
 - RecyclerView & ListView & GridView & ScrollView
@@ -122,9 +120,6 @@ Lighter.with(activity)
 
 #### About [LighterParameter.Builder](https://github.com/samlss/Lighter/blob/master/lighter/src/main/java/me/samlss/lighter/parameter/LighterParameter.java)
 
-![Lighter](https://github.com/samlss/Lighter/blob/master/screenshots/screenshot6.png)
-
-
 
 | Method                      | Description                                                  |
 | :-------------------------- | :----------------------------------------------------------- |
@@ -138,7 +133,7 @@ Lighter.with(activity)
 | setTipViewRelativeDirection | Set the direction of the tip view relative to the highlighted view |
 | setTipViewRelativeOffset    | Set the offset of the tip view's margin relative to the highlighted view |
 | setTipViewDisplayAnimation  | Set animation of the tip view when display                   |
-| build                       | To create a [LighterParameter]() object                      |
+| build                       | To create a [LighterParameter](https://github.com/samlss/Lighter/blob/master/lighter/src/main/java/me/samlss/lighter/parameter/LighterParameter.java) object                      |
 
 ##### Note:
 
