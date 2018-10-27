@@ -122,9 +122,6 @@ Lighter.with(activity)
 
 #### About [LighterParameter.Builder](https://github.com/samlss/Lighter/blob/master/lighter/src/main/java/me/samlss/lighter/parameter/LighterParameter.java)
 
-![Lighter](https://github.com/samlss/Lighter/blob/master/screenshots/screenshot6.png)
-
-
 
 | Method                      | Description                                                  |
 | :-------------------------- | :----------------------------------------------------------- |
