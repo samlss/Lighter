@@ -135,7 +135,7 @@ Lighter.with(activity)
 | setTipViewRelativeDirection | Set the direction of the tip view relative to the highlighted view |
 | setTipViewRelativeOffset    | Set the offset of the tip view's margin relative to the highlighted view |
 | setTipViewDisplayAnimation  | Set animation of the tip view when display                   |
-| build                       | To create a [LighterParameter]() object                      |
+| build                       | To create a [LighterParameter](https://github.com/samlss/Lighter/blob/master/lighter/src/main/java/me/samlss/lighter/parameter/LighterParameter.java) object                      |
 
 ##### Note:
 
