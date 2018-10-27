@@ -120,7 +120,7 @@ Lighter.with(activity)
                 .show();
 ```
 
-#### About [LighterParameter.Builder]()
+#### About [LighterParameter.Builder](https://github.com/samlss/Lighter/blob/master/lighter/src/main/java/me/samlss/lighter/parameter/LighterParameter.java)
 
 ![Lighter](https://github.com/samlss/Lighter/blob/master/screenshots/screenshot6.png)
 
@@ -147,7 +147,7 @@ Lighter.with(activity)
 
 For the above two methods, you only need to use one. If you don't use it,  an exception will be throwing.
 
-#### About [Shape]()
+#### About [Shape](https://github.com/samlss/Lighter/tree/master/lighter/src/main/java/me/samlss/lighter/shape)
 
 | Shape  | Description                                              |
 | ------ | -------------------------------------------------------- |
