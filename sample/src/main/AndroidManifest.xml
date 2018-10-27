@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.samlss.lighter_demo">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:supportsRtl="true"
+        android:label="@string/a_name"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".RelativeLayoutActivity"/>
+
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".RecyclerViewActivity"/>
+
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".ListViewActivity"/>
+
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".ScrollViewActivity"/>
+
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".GridViewActivity"/>
+
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".ViewPagerActivity"/>
+
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".DialogActivity"/>
+
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".FragmentActivity"/>
+    </application>
+</manifest>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+   <LinearLayout
+       android:orientation="vertical"
+       android:gravity="center"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <Button
+           android:id="@+id/btn_normal"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="RelativeLayout"
+           android:onClick="startNormalLayout"
+           />
+
+       <Button
+           android:id="@+id/btn_recyclerview"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="RecyclerView"
+           android:onClick="startRecyclerView"
+           />
+
+       <Button
+           android:id="@+id/btn_list_view"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="ListView"
+           android:onClick="startListView"
+           />
+
+
+       <Button
+           android:id="@+id/btn_grid_view"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:onClick="startGridView"
+           android:text="GridView"
+           />
+
+       <Button
+           android:id="@+id/btn_scroll_view"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="ScrollView"
+           android:onClick="startScrollView"
+           />
+
+       <Button
+           android:id="@+id/btn_view_pager"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:onClick="startViewPager"
+           android:text="ViewPager"
+           />
+
+       <Button
+           android:id="@+id/btn_dialog"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:onClick="startDialog"
+           android:text="Dialog"
+           />
+
+       <Button
+           android:id="@+id/btn_fragment"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:onClick="startFragment"
+           android:text="Fragment"
+           />
+
+
+       <TextView
+           android:gravity="center"
+           android:drawablePadding="5dp"
+           android:layout_marginRight="10dp"
+           android:layout_gravity="right"
+           android:drawableLeft="@drawable/ic_samlss_head_photo"
+           android:textColor="@android:color/black"
+           android:layout_marginTop="50dp"
+           android:text="Created by Samlss"
+           android:textSize="16sp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+   </LinearLayout>
+
+</ScrollView>
