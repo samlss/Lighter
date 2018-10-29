@@ -1,6 +1,8 @@
 # Lighter
 [![Download](https://api.bintray.com/packages/samlss/maven/lighter/images/download.svg)](https://bintray.com/samlss/maven/lighter/_latestVersion)   [![Api reqeust](https://img.shields.io/badge/API-14+-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14#l14)    [![Apache License 2.0](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/samlss/Lighter/blob/master/LICENSE)  [![Blog](https://img.shields.io/badge/samlss-blog-orange.svg)](https://blog.csdn.net/Samlss)
 
+ [中文](https://github.com/samlss/Lighter/blob/master/README_CN.md)
+
 ### Support use in:
 - Android native layout(Such as RelativeLayout, FragmentLayout)
 - RecyclerView & ListView & GridView & ScrollView
