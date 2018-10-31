@@ -65,7 +65,7 @@
 通过使用以下代码来指定:
 
 ```java
-Lighter with(Activity activity) //使用 activity.findViewById(android.R.id.content) 作为父view
+Lighter with(Activity activity) //使用 activity.getWindow().getDecorView 作为父view, 因此会全屏显示
     
 Lighter with(ViewGroup rootView) //使用 'rootView' 作为父view
 ```
