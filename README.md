@@ -1,5 +1,5 @@
 # Lighter
-[![Download](https://api.bintray.com/packages/samlss/maven/lighter/images/download.svg)](https://bintray.com/samlss/maven/lighter/_latestVersion)   [![Api reqeust](https://img.shields.io/badge/API-14+-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14#l14)    [![Apache License 2.0](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/samlss/Lighter/blob/master/LICENSE)  [![Blog](https://img.shields.io/badge/samlss-blog-orange.svg)](https://blog.csdn.net/Samlss)
+ [ ![Download](https://api.bintray.com/packages/samlss/maven/lighter/images/download.svg?version=1.0.1) ](https://bintray.com/samlss/maven/lighter/1.0.1/link)   [![Api reqeust](https://img.shields.io/badge/API-14+-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14#l14)    [![Apache License 2.0](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/samlss/Lighter/blob/master/LICENSE)  [![Blog](https://img.shields.io/badge/samlss-blog-orange.svg)](https://blog.csdn.net/Samlss)
 
  [中文](https://github.com/samlss/Lighter/blob/master/README_CN.md)
 
@@ -46,7 +46,7 @@
 Add it in your app build.gradle at the end of repositories:
   ```java
   dependencies {
-      implementation 'me.samlss:lighter:1.0.0'
+      implementation 'me.samlss:lighter:1.0.1'
   }
   ```
 
@@ -55,7 +55,7 @@ Add it in your app build.gradle at the end of repositories:
 <dependency>
   <groupId>me.samlss</groupId>
   <artifactId>lighter</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
