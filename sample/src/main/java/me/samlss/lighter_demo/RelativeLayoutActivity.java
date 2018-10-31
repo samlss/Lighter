@@ -1,5 +1,6 @@
 package me.samlss.lighter_demo;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -50,6 +51,7 @@ public class RelativeLayoutActivity extends AppCompatActivity {
         rectShape.setPaint(LighterHelper.getDiscretePaint());
 
         Lighter.with(this)
+                .setBackgroundColor(0xB3000000)
                 .setOnLighterListener(new OnLighterListener() {
                     @Override
                     public void onShow(int index) {

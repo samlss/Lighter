@@ -2,6 +2,7 @@ package me.samlss.lighter;
 
 import android.app.Activity;
 import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,27 +36,20 @@ public class LighterInternalImpl implements LighterInternalAction {
     private boolean isAutoNext = true;
     private boolean isShowing = false;
     private boolean intercept = false;
+    private boolean isDoRootViewGlobelLayout = false;
 
     private int mShowIndex;
     private OnLighterListener mOnLighterListener;
     private OnLighterViewClickListener mOutSideLighterClickListener;
+
     public LighterInternalImpl(final Activity activity) {
         mLighterView = new LighterView(activity);
-        mRootView = activity.findViewById(android.R.id.content);
-
-        init();
+        mRootView = (ViewGroup) activity.getWindow().getDecorView();
     }
 
     public LighterInternalImpl(ViewGroup rootView){
         mRootView = rootView;
         mLighterView = new LighterView(rootView.getContext());
-
-        init();
-    }
-
-    private void init() {
-        mRootView.addView(mLighterView,
-                new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
     }
 
     public void addHighlight(LighterParameter... lighterParameters) {
@@ -183,6 +177,10 @@ public class LighterInternalImpl implements LighterInternalAction {
 
         //To ensure the root view has attached to window
         if ( ViewUtils.isAttachedToWindow(mRootView)) {
+            if (mLighterView.getParent() == null) {
+                mRootView.addView(mLighterView,
+                        new ViewGroup.LayoutParams(mRootView.getWidth(), mRootView.getHeight()));
+            }
             mShowIndex = 0;
             next();
         }else{
@@ -211,6 +209,11 @@ public class LighterInternalImpl implements LighterInternalAction {
             /**
              * Guaranteed to be called only once.
              * */
+            if (isDoRootViewGlobelLayout){
+                return;
+            }
+
+            isDoRootViewGlobelLayout = true;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 mRootView.getViewTreeObserver().removeOnGlobalLayoutListener(mGlobalLayoutListener);
             }
