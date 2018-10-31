@@ -44,7 +44,7 @@
 添加到app的build.gradle:
   ```java
   dependencies {
-      implementation 'me.samlss:lighter:1.0.0'
+      implementation 'me.samlss:lighter:1.0.1'
   }
   ```
 
@@ -53,7 +53,7 @@
 <dependency>
   <groupId>me.samlss</groupId>
   <artifactId>lighter</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
