@@ -67,7 +67,7 @@ You can specify that the highlighted root view is attached to the activity or vi
 you can use the below code to specify:
 
 ```java
-Lighter with(Activity activity) //will use activity.findViewById(android.R.id.content) as the root view
+Lighter with(Activity activity) //will use activity.getWindow().getDecorView as the root view, so it will display in full screen 
     
 Lighter with(ViewGroup rootView) //will use the 'rootView' as the root view
 ```
