@@ -17,7 +17,7 @@
 - 提示view的相对位置
 - 链式调用，简单使用
 
-### Screenshots
+### 效果图
 
 ![Lighter](https://github.com/samlss/Lighter/blob/master/screenshots/screenshot1.gif)
 
@@ -38,7 +38,7 @@
 ![Lighter](https://github.com/samlss/Lighter/blob/master/screenshots/screenshot5.png)
 
 ------
-### Usage
+### 使用
 
 #### Gradle
 添加到app的build.gradle:
