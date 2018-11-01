@@ -6,8 +6,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.0.2"
     }
 
     lintOptions {
@@ -22,7 +22,7 @@ publish {
     userOrg = 'samlss'
     groupId = 'me.samlss'
     artifactId = 'lighter'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.2'
     desc = 'A highlight & guide library for android'
     website = 'https://github.com/samlss/Lighter'
 }
