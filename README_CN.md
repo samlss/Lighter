@@ -58,7 +58,7 @@
 </dependency>
 ```
 
-#### 
+#### 代码
 
 你可以指定highlight view所依附的父view,
 
@@ -185,8 +185,6 @@ Bottom: 当高亮view处于屏幕的左边的时候, leftMargin 和 topMargin生
 ##### Animation
 
 可使用任何动画
-
-##### 
 
 
 ### License
