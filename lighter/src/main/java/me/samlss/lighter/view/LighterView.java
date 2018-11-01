@@ -77,27 +77,30 @@ public class LighterView extends FrameLayout {
         mLighterParameterList = null;
     }
 
-    @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
+//    @Override
+//    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+//        super.onLayout(changed, left, top, right, bottom);
+//
+//        if (!changed
+//                || (mInitWidth == 0 && mInitHeight == 0)
+//                || mLighterParameterList == null
+//                || mLighterParameterList.isEmpty()
+//                || (getWidth() == mInitWidth && getHeight() == mInitHeight)){
+//            return;
+//        }
+//
+//        mInitWidth = getWidth();
+//        mInitHeight = getHeight();
+//
+//        reLayout();
+//    }
 
-        if (!changed
-                || (mInitWidth == 0 && mInitHeight == 0)
-                || mLighterParameterList == null
-                || mLighterParameterList.isEmpty()
-                || (getWidth() == mInitWidth && getHeight() == mInitHeight)){
-            return;
-        }
-
-        mInitWidth = getWidth();
-        mInitHeight = getHeight();
-
+    public void reLayout(){
         for (int i = 0; i < getChildCount(); i++) {
-            ViewUtils.calculateHighlightedViewRect(this, mLighterParameterList.get(i));
+            ViewUtils.calculateHighlightedViewRect(LighterView.this, mLighterParameterList.get(i));
             getChildAt(i).setLayoutParams(calculateLayoutParams(mInitWidth, mInitHeight, mLighterParameterList.get(i), getChildAt(i)));
         }
     }
-
 
     @Override
     public void setBackgroundColor(int color) {

@@ -36,7 +36,8 @@ public class LighterInternalImpl implements LighterInternalAction {
     private boolean isAutoNext = true;
     private boolean isShowing = false;
     private boolean intercept = false;
-    private boolean isDoRootViewGlobelLayout = false;
+    private boolean isDecorView = false;
+    private boolean hasDidRootViewGlobalLayout = false;
 
     private int mShowIndex;
     private OnLighterListener mOnLighterListener;
@@ -45,11 +46,15 @@ public class LighterInternalImpl implements LighterInternalAction {
     public LighterInternalImpl(final Activity activity) {
         mLighterView = new LighterView(activity);
         mRootView = (ViewGroup) activity.getWindow().getDecorView();
+        isDecorView = true;
+
+        activity.findViewById(android.R.id.content).addOnLayoutChangeListener(mRootViewLayoutChangeListener);
     }
 
     public LighterInternalImpl(ViewGroup rootView){
         mRootView = rootView;
         mLighterView = new LighterView(rootView.getContext());
+        mRootView.addOnLayoutChangeListener(mRootViewLayoutChangeListener);
     }
 
     public void addHighlight(LighterParameter... lighterParameters) {
@@ -152,6 +157,11 @@ public class LighterInternalImpl implements LighterInternalAction {
         }
 
         isReleased = true;
+        if (isDecorView){
+            mRootView.findViewById(android.R.id.content).removeOnLayoutChangeListener(mRootViewLayoutChangeListener);
+        }else{
+            mRootView.removeOnLayoutChangeListener(mRootViewLayoutChangeListener);
+        }
 
         mRootView.removeView(mLighterView);
         mLighterView.removeAllViews();
@@ -209,16 +219,44 @@ public class LighterInternalImpl implements LighterInternalAction {
             /**
              * Guaranteed to be called only once.
              * */
-            if (isDoRootViewGlobelLayout){
+            if (hasDidRootViewGlobalLayout){
                 return;
             }
 
-            isDoRootViewGlobelLayout = true;
+            hasDidRootViewGlobalLayout = true;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 mRootView.getViewTreeObserver().removeOnGlobalLayoutListener(mGlobalLayoutListener);
             }
 
             show();
+        }
+    };
+
+    private View.OnLayoutChangeListener mRootViewLayoutChangeListener = new View.OnLayoutChangeListener() {
+        @Override
+        public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+            if (left == oldLeft
+                    && top == oldTop
+                    && right == oldRight
+                    && bottom == oldBottom){
+                return;
+            }
+
+            if (mLighterView == null || mLighterView.getParent() == null){
+                return;
+            }
+
+            if (!isDecorView) {
+                ViewGroup.LayoutParams layoutParams = mLighterView.getLayoutParams();
+                layoutParams.width = Math.abs(right - left);
+                layoutParams.height = Math.abs(bottom - top);
+
+                mLighterView.setInitWidth(layoutParams.width);
+                mLighterView.setInitHeight(layoutParams.height);
+                mLighterView.setLayoutParams(layoutParams);
+            }
+
+            mLighterView.reLayout();
         }
     };
 
