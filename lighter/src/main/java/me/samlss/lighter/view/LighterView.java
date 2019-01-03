@@ -168,6 +168,7 @@ public class LighterView extends FrameLayout {
             return layoutParams;
         }
 
+        boolean alignRight = false;
         switch (lighterParameter.getTipViewRelativeDirection()){
             default:
             case Direction.LEFT:
@@ -182,6 +183,7 @@ public class LighterView extends FrameLayout {
 
             case Direction.TOP:
                 if (highlightedViewRect.left > width / 2){ //on the right
+                    alignRight = true;
                     layoutParams.rightMargin  = (int) (width - highlightedViewRect.right  + marginOffset.getRightOffset());
                 }else{ //on the left
                     layoutParams.leftMargin  = (int) (highlightedViewRect.left + marginOffset.getLeftOffset());
@@ -191,6 +193,7 @@ public class LighterView extends FrameLayout {
 
             case Direction.BOTTOM:
                 if (highlightedViewRect.left > width / 2){ //on the right
+                    alignRight = true;
                     layoutParams.rightMargin  = (int) (width - highlightedViewRect.right  + marginOffset.getRightOffset());
                 }else{ //on the left
                     layoutParams.leftMargin  = (int) (highlightedViewRect.left + marginOffset.getLeftOffset());
@@ -199,7 +202,8 @@ public class LighterView extends FrameLayout {
                 break;
         }
 
-        if(layoutParams.rightMargin != 0){
+        if(layoutParams.rightMargin != 0
+                || alignRight){
             layoutParams.gravity = Gravity.RIGHT;
         }else {
             layoutParams.gravity = Gravity.LEFT;
@@ -231,8 +235,7 @@ public class LighterView extends FrameLayout {
             mBgColor = ViewUtils.DEFAULT_HIGHLIGHT_VIEW_BG_COLOR;
         }
 
-        canvas.save();
-
+//        canvas.save();
         //firstly, clip the rects of all the highlighted views.
         if (mLighterParameterList != null && !mLighterParameterList.isEmpty()) {
             for (LighterParameter lighterParameter : mLighterParameterList) {
@@ -262,7 +265,7 @@ public class LighterView extends FrameLayout {
             }
         }
 
-        canvas.restore();
+//        canvas.restore();
     }
 
     public void setInitHeight(int initHeight) {
