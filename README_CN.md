@@ -178,7 +178,7 @@ Left: topMargin 和 rightMargin生效
 
 Right: topMargin 和 leftmargin生效
 
-Top:  当高亮view处于屏幕的右边的时候, teftMargin & bottomMargin生效. 否则, rightMargin & bottomMargin生效
+Top:  当高亮view处于屏幕的左边的时候, teftMargin & bottomMargin生效. 否则, rightMargin & bottomMargin生效
 
 Bottom: 当高亮view处于屏幕的左边的时候, leftMargin 和 topMargin生效. 否则, rightMargin & topMargin生效
 
